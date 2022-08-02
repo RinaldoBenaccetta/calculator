@@ -19,6 +19,10 @@ export const listenButton = (element, listenerOperationSign, Operation) => {
             addCeListener(element, Operation);
             break;
 
+        case 'ac':
+            addAcListener(element, Operation);
+            break;
+
         default:
             addOperationListener(element, listenerOperationSign, Operation);
             break;
@@ -45,6 +49,15 @@ const addCeListener = (element, Operation) => {
     element.addEventListener('click', () => {
         // remove last character of operation
         Operation.ce();
+        // show the new operation in display
+        refreshOperationDisplay(Operation.getOperation());
+    });
+};
+
+const addAcListener = (element, Operation) => {
+    element.addEventListener('click', () => {
+        // flush the operation
+        Operation.ac();
         // show the new operation in display
         refreshOperationDisplay(Operation.getOperation());
     });

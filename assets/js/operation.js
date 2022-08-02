@@ -18,4 +18,8 @@ export class MainOperation {
     ce() {
         this._operation = this._operation.slice(0, -1);
     }
+
+    ac() {
+        this._operation = '';
+    }
 }

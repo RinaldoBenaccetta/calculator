@@ -77,7 +77,7 @@ export const layout = [
         id: 'ac',
         parentId: 'top-buttons',
         text: 'AC',
-        listenerOperationSign: 'flush',
+        listenerOperationSign: 'ac',
     },
     // main buttons
     {
