@@ -68,10 +68,11 @@ export class MainOperation {
         const lastCharacter = this._operation.charAt(
             this._operation.length - 1
         );
-        // return the result of isOperator on the last character
+        // check if last char. is a number or )
+        //and all paranthesis are closed.
         return (
-            this.isNumber(lastCharacter) ||
-            this.isClosingParenthesis(lastCharacter)
+            (this.isParenthesisAreClosed() || this.isNumber(lastCharacter)) &&
+            this.isParenthesisAreClosed()
         );
     }
 
@@ -93,6 +94,18 @@ export class MainOperation {
      */
     isClosingParenthesis(string) {
         return string === ')';
+    }
+
+    /**
+     * Check if parenthesis are all closed.
+     *
+     * @returns {Boolean}
+     */
+    isParenthesisAreClosed() {
+        const openParenthesisCount = this._operation.split('(').length - 1;
+        const closingParenthesisCount = this._operation.split(')').length - 1;
+
+        return openParenthesisCount === closingParenthesisCount;
     }
 
     /**
