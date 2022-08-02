@@ -71,7 +71,8 @@ export class MainOperation {
         // check if last char. is a number or )
         //and all paranthesis are closed.
         return (
-            (this.isParenthesisAreClosed() || this.isNumber(lastCharacter)) &&
+            (this.isClosingParenthesis(lastCharacter) ||
+                this.isNumber(lastCharacter)) &&
             this.isParenthesisAreClosed() &&
             this.isNoEmptyParenthesis()
         );
