@@ -39,6 +39,7 @@ export const layout = [
         id: 'open-parenthesis',
         parentId: 'top-buttons',
         text: '(',
+        listenerOperationSign: '(',
     },
     {
         tag: 'button',
@@ -46,6 +47,7 @@ export const layout = [
         id: 'closing-parenthesis',
         parentId: 'top-buttons',
         text: ')',
+        listenerOperationSign: ')',
     },
     {
         tag: 'button',
@@ -53,6 +55,7 @@ export const layout = [
         id: 'percent',
         parentId: 'top-buttons',
         text: '%',
+        listenerOperationSign: '%',
     },
     {
         tag: 'button',
@@ -60,6 +63,7 @@ export const layout = [
         id: 'ac',
         parentId: 'top-buttons',
         text: 'AC',
+        listenerOperationSign: 'flush',
     },
     // main buttons
     {
@@ -68,6 +72,7 @@ export const layout = [
         id: '9',
         parentId: 'main-buttons',
         text: '9',
+        listenerOperationSign: '9',
     },
     {
         tag: 'button',
@@ -75,6 +80,7 @@ export const layout = [
         id: '8',
         parentId: 'main-buttons',
         text: '8',
+        listenerOperationSign: '8',
     },
     {
         tag: 'button',
@@ -82,6 +88,7 @@ export const layout = [
         id: '7',
         parentId: 'main-buttons',
         text: '7',
+        listenerOperationSign: '7',
     },
     {
         tag: 'button',
@@ -89,6 +96,7 @@ export const layout = [
         id: '6',
         parentId: 'main-buttons',
         text: '6',
+        listenerOperationSign: '6',
     },
     {
         tag: 'button',
@@ -96,6 +104,7 @@ export const layout = [
         id: '5',
         parentId: 'main-buttons',
         text: '5',
+        listenerOperationSign: '5',
     },
     {
         tag: 'button',
@@ -103,6 +112,7 @@ export const layout = [
         id: '4',
         parentId: 'main-buttons',
         text: '4',
+        listenerOperationSign: '4',
     },
     {
         tag: 'button',
@@ -110,6 +120,7 @@ export const layout = [
         id: '3',
         parentId: 'main-buttons',
         text: '3',
+        listenerOperationSign: '3',
     },
     {
         tag: 'button',
@@ -117,6 +128,7 @@ export const layout = [
         id: '2',
         parentId: 'main-buttons',
         text: '2',
+        listenerOperationSign: '2',
     },
     {
         tag: 'button',
@@ -124,6 +136,7 @@ export const layout = [
         id: '1',
         parentId: 'main-buttons',
         text: '1',
+        listenerOperationSign: '1',
     },
     {
         tag: 'button',
@@ -131,6 +144,7 @@ export const layout = [
         id: '0',
         parentId: 'main-buttons',
         text: '0',
+        listenerOperationSign: '0',
     },
     {
         tag: 'button',
@@ -138,6 +152,7 @@ export const layout = [
         id: 'dot',
         parentId: 'main-buttons',
         text: '.',
+        listenerOperationSign: '.',
     },
     {
         tag: 'button',
@@ -145,6 +160,7 @@ export const layout = [
         id: 'equal',
         parentId: 'main-buttons',
         text: '=',
+        listenerOperationSign: 'process',
     },
     // operators
     {
@@ -153,6 +169,7 @@ export const layout = [
         id: 'divide',
         parentId: 'operator-buttons',
         text: '÷',
+        listenerOperationSign: '/',
     },
     {
         tag: 'button',
@@ -160,6 +177,7 @@ export const layout = [
         id: 'multiply',
         parentId: 'operator-buttons',
         text: 'x',
+        listenerOperationSign: '*',
     },
     {
         tag: 'button',
@@ -167,6 +185,7 @@ export const layout = [
         id: 'substract',
         parentId: 'operator-buttons',
         text: '-',
+        listenerOperationSign: '-',
     },
     {
         tag: 'button',
@@ -174,5 +193,6 @@ export const layout = [
         id: 'add',
         parentId: 'operator-buttons',
         text: '+',
+        listenerOperationSign: '+',
     },
 ];

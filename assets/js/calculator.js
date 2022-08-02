@@ -27,4 +27,9 @@ const showCalculator = (layout) => {
     }
 };
 
-showCalculator(layout);
+const mainCalculator = () => {
+    let operation = '';
+    showCalculator(layout);
+};
+
+mainCalculator();
