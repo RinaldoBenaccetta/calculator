@@ -21,10 +21,10 @@ export const refreshResultDisplay = (result) => {
  * with the provided Text.
  *
  * @param {String} elementId
- * @param {String} innerHtml
+ * @param {String} innerText
  */
-const updateElement = (elementId, innerHtml) => {
+const updateElement = (elementId, innerText) => {
     const operationDisplay = document.querySelector(`#${elementId}`);
 
-    operationDisplay.innerHTML = innerHtml;
+    operationDisplay.innerText = innerText;
 };
