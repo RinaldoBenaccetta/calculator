@@ -37,9 +37,9 @@ export class MainOperation {
      */
     computeResult() {
         return this.isComputable()
-            ? false
-            : // the operation is translated in machine version before compute.
-              Function('return ' + this.machineOperation())();
+            ? // the operation is translated in machine version before compute.
+              Function('return ' + this.machineOperation())()
+            : false;
     }
 
     /**
@@ -69,23 +69,27 @@ export class MainOperation {
             this._operation.length - 1
         );
         // return the result of isOperator on the last character
-        return this.isOperator(lastCharacter);
+        return this.isNumber(lastCharacter) || this.isDot(lastCharacter);
     }
 
     /**
-     * Check if provided string is an operator.
+     * Check if provided string is not a number or dot.
      *
      * @param {String} string
-     * @returns  {Boolean}
+     * @returns {Boolean}
      */
-    isOperator(string) {
-        return (
-            string === '+' ||
-            string === '-' ||
-            string === '÷' ||
-            string === 'x' ||
-            string === '%'
-        );
+    isNumber(string) {
+        return !isNaN(string);
+    }
+
+    /**
+     * Check if the provided character is a dot.
+     *
+     * @param {String} string
+     * @returns {Boolean}
+     */
+    isDot(string) {
+        return string === '.';
     }
 
     /**
