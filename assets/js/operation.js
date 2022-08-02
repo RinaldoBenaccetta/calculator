@@ -69,7 +69,7 @@ export class MainOperation {
             this._operation.length - 1
         );
         // return the result of isOperator on the last character
-        return this.isNumber(lastCharacter) || this.isDot(lastCharacter);
+        return this.isNumber(lastCharacter);
     }
 
     /**
@@ -80,16 +80,6 @@ export class MainOperation {
      */
     isNumber(string) {
         return !isNaN(string);
-    }
-
-    /**
-     * Check if the provided character is a dot.
-     *
-     * @param {String} string
-     * @returns {Boolean}
-     */
-    isDot(string) {
-        return string === '.';
     }
 
     /**
