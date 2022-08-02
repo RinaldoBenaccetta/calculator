@@ -77,7 +77,9 @@ export class MainOperation {
      */
     isComputable() {
         return (
-            (this.isClosingParenthesis() || this.isNumber()) &&
+            (this.isClosingParenthesis() ||
+                this.isNumber() ||
+                this.lastCharacterIsPercent()) &&
             this.isParenthesisAreClosed() &&
             this.isNoEmptyParenthesis()
         );
@@ -94,13 +96,23 @@ export class MainOperation {
     }
 
     /**
-     * Check if last character of current operation is a closing parenthesis.
+     * Check if last character of current operation is
+     * a closing parenthesis.
      *
      * @param {String} string
      * @returns {Boolean}
      */
     isClosingParenthesis() {
         return this.lastCharacterOfOperation() === ')';
+    }
+
+    /**
+     * Check if last character of current operation is percent.
+     *
+     * @returns {Boolean}
+     */
+    lastCharacterIsPercent() {
+        return this.lastCharacterOfOperation() === '%';
     }
 
     /**
