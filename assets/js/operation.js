@@ -10,4 +10,8 @@ export class MainOperation {
     updateOperation(operationString) {
         this._operation += operationString;
     }
+
+    computeResult() {
+        return Function('return ' + this._operation)();
+    }
 }

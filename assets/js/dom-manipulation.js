@@ -3,3 +3,9 @@ export const refreshOperationDisplay = (newOperation) => {
 
     operationDisplay.innerHTML = newOperation;
 };
+
+export const refreshResultDisplay = (result) => {
+    const operationDisplay = document.querySelector(`#result-display`);
+
+    operationDisplay.innerHTML = result;
+};

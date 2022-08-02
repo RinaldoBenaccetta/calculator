@@ -6,6 +6,12 @@ function computeResult(str) {
     return Function('return ' + str)();
 }
 
+// function computeResultTest(str) {
+//     return Function('return ' + str)();
+// }
+
+// computeResultTest('alert(2+3);');
+
 const a = '(13 + 17) / 3';
 
 console.log(computeResult(a)); // Should display 10
