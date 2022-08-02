@@ -17,6 +17,8 @@
 //     },
 // };
 
+import { listenButton } from './button-listener.js';
+
 /**
  * Create an element ready to be injected in DOM.
  *
@@ -60,12 +62,20 @@ export const createInDom = (
     elementClass,
     elementId,
     parentId,
-    elementInnerText
+    elementInnerText,
+    listenerOperationSign,
+    Operation
 ) => {
     // get the parent element
     const parent = document.querySelector(`#${parentId}`);
-    // create and append new element to parent
-    parent.append(
-        createElement(elementTag, elementClass, elementId, elementInnerText)
+    // create Element
+    const newElement = createElement(
+        elementTag,
+        elementClass,
+        elementId,
+        elementInnerText
     );
+    // create and append new element to parent
+    parent.append(newElement);
+    listenButton(newElement, listenerOperationSign, Operation);
 };
