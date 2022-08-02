@@ -14,4 +14,8 @@ export class MainOperation {
     computeResult() {
         return Function('return ' + this._operation)();
     }
+
+    ce() {
+        this._operation = this._operation.slice(0, -1);
+    }
 }

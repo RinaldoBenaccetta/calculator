@@ -15,6 +15,10 @@ export const listenButton = (element, listenerOperationSign, Operation) => {
             addProcessListener(element, Operation);
             break;
 
+        case 'ce':
+            addCeListener(element, Operation);
+            break;
+
         default:
             addOperationListener(element, listenerOperationSign, Operation);
             break;
@@ -34,5 +38,14 @@ const addProcessListener = (element, Operation) => {
     element.addEventListener('click', () => {
         // show the result
         refreshResultDisplay(Operation.computeResult());
+    });
+};
+
+const addCeListener = (element, Operation) => {
+    element.addEventListener('click', () => {
+        // remove last character of operation
+        Operation.ce();
+        // show the new operation in display
+        refreshOperationDisplay(Operation.getOperation());
     });
 };

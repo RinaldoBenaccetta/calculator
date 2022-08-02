@@ -176,6 +176,14 @@ export const layout = [
         text: '=',
         listenerOperationSign: 'process',
     },
+    {
+        tag: 'button',
+        class: 'calculator__main__buttons__ce',
+        id: 'ce',
+        parentId: 'main-buttons',
+        text: 'ce',
+        listenerOperationSign: 'ce',
+    },
     // operators
     {
         tag: 'button',
