@@ -191,7 +191,7 @@ export const layout = [
         id: 'divide',
         parentId: 'operator-buttons',
         text: '÷',
-        listenerOperationSign: '/',
+        listenerOperationSign: '÷',
     },
     {
         tag: 'button',
@@ -199,7 +199,7 @@ export const layout = [
         id: 'multiply',
         parentId: 'operator-buttons',
         text: 'x',
-        listenerOperationSign: '*',
+        listenerOperationSign: 'x',
     },
     {
         tag: 'button',

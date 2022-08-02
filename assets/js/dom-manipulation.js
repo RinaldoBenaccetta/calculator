@@ -1,11 +1,13 @@
 export const refreshOperationDisplay = (newOperation) => {
-    const operationDisplay = document.querySelector(`#operation-display`);
-
-    operationDisplay.innerHTML = newOperation;
+    updateElement('operation-display', newOperation);
 };
 
 export const refreshResultDisplay = (result) => {
-    const operationDisplay = document.querySelector(`#result-display`);
+    updateElement('result-display', result);
+};
 
-    operationDisplay.innerHTML = result;
+const updateElement = (elementId, innerHtml) => {
+    const operationDisplay = document.querySelector(`#${elementId}`);
+
+    operationDisplay.innerHTML = innerHtml;
 };

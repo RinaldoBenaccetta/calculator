@@ -12,8 +12,7 @@ export class MainOperation {
     }
 
     computeResult() {
-        let toCompute = this._operation.replace('%', '/100');
-        return Function('return ' + toCompute)();
+        return Function('return ' + this.computableOperation())();
     }
 
     ce() {
@@ -22,5 +21,24 @@ export class MainOperation {
 
     ac() {
         this._operation = '';
+    }
+
+    // checkComputeError() {
+    //     const lastCharacter = this._operation.charAt(this._operation.length - 1);
+    //     lastCharacter
+    // }
+
+    // isOperator(string) {
+    //     return string === '+' || string === '-' || string === '';
+    // }
+
+    computableOperation() {
+        let output = this._operation;
+
+        output = output.replace('%', '/100');
+        output = output.replace('x', '*');
+        output = output.replace('÷', '/');
+
+        return output;
     }
 }
