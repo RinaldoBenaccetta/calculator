@@ -78,7 +78,7 @@ const addProcessListener = (element, Operation) => {
 /**
  * Add an event listener to the actual button to
  * remove last character of actual operation and
- * display it in DOM.
+ * display it in DOM.v
  *
  * @param {Node} element
  * @param {Object} Operation
@@ -103,7 +103,9 @@ const addAcListener = (element, Operation) => {
     element.addEventListener('click', () => {
         // flush the operation
         Operation.ac();
-        // show the new operation in display
+        // show the new empty operation in display
         refreshOperationDisplay(Operation.getOperation());
+        // show nothing in result display
+        refreshResultDisplay('');
     });
 };
