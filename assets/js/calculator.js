@@ -9,8 +9,6 @@ const a = '(13 + 17) / 3';
 
 console.log(computeResult(a)); // Should display 10
 
-createInDom('button', 'myClass', 'myId', 'main', 'hello world!');
-
 const showCalculator = (layout) => {
     for (const element of layout) {
         createInDom(
