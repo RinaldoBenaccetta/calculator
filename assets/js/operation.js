@@ -76,7 +76,7 @@ export class MainOperation {
     }
 
     /**
-     * Check if provided string is not a number or dot.
+     * Check if provided string is a number.
      *
      * @param {String} string
      * @returns {Boolean}
