@@ -1,3 +1,6 @@
+/**
+ * The calculator collection ready to by processed.
+ */
 export const layout = [
     // result
     {

@@ -17,6 +17,16 @@
 //     },
 // };
 
+/**
+ * Create an element ready to be injected in DOM.
+ *
+ * @param {String} elementTag
+ * @param {String} elementClass
+ * @param {String} elementId
+ * @param {String} elementInnerText
+ *
+ * @returns {Node}
+ */
 const createElement = (
     elementTag,
     elementClass,
@@ -35,6 +45,16 @@ const createElement = (
     return newElement;
 };
 
+/**
+ * Create An element and append it in DOM as a child of the element
+ * with the provided ID.
+ *
+ * @param {String} elementTag
+ * @param {String} elementClass
+ * @param {String} elementId
+ * @param {String} parentId
+ * @param {String} elementInnerText
+ */
 export const createInDom = (
     elementTag,
     elementClass,
