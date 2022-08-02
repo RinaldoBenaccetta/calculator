@@ -72,7 +72,8 @@ export class MainOperation {
         //and all paranthesis are closed.
         return (
             (this.isParenthesisAreClosed() || this.isNumber(lastCharacter)) &&
-            this.isParenthesisAreClosed()
+            this.isParenthesisAreClosed() &&
+            this.isNoEmptyParenthesis()
         );
     }
 
@@ -106,6 +107,16 @@ export class MainOperation {
         const closingParenthesisCount = this._operation.split(')').length - 1;
 
         return openParenthesisCount === closingParenthesisCount;
+    }
+
+    /**
+     * Check if there is not empty parenthesis.
+     *
+     * @returns {boolean}
+     */
+    isNoEmptyParenthesis() {
+        const emptyParenthesis = this._operation.split('()').length - 1;
+        return emptyParenthesis === 0;
     }
 
     /**
