@@ -1,32 +1,68 @@
+/**
+ * Class to handle the operation of the Calc.
+ */
 export class MainOperation {
+    /**
+     * initialize the class.
+     */
     constructor() {
         this._operation = '';
     }
 
+    /**
+     * Return the current operation in human readable version.
+     *
+     * @returns {String}
+     */
     getOperation() {
         return this._operation;
     }
 
+    /**
+     * Add the provided string to the end of the current operation string.
+     *
+     * @param {String} operationString
+     */
     updateOperation(operationString) {
         this._operation += operationString;
     }
 
+    /**
+     * Return the result of current operation.
+     * If last character of actual operation is an operator,
+     * return false.
+     * otherwise return the result of the actual operation.
+     *
+     * @returns {false|Number}
+     */
     computeResult() {
-        // if last character is an operator, return false
-        // otherwise return the result of machine operation version
         return this.isComputable()
             ? false
-            : Function('return ' + this.machineOperation())();
+            : // the operation is translated in machine version before compute.
+              Function('return ' + this.machineOperation())();
     }
 
+    /**
+     * Remove last character or operator from the current operation.
+     */
     ce() {
         this._operation = this._operation.slice(0, -1);
     }
 
+    /**
+     * Flush the current operation.
+     */
     ac() {
         this._operation = '';
     }
 
+    /**
+     * Check if actual operation is computable.
+     * If last character is an operator, return false.
+     * Otherwise return true.
+     *
+     * @returns {Boolean}
+     */
     isComputable() {
         // get last character of operation
         const lastCharacter = this._operation.charAt(
@@ -36,6 +72,12 @@ export class MainOperation {
         return this.isOperator(lastCharacter);
     }
 
+    /**
+     * Check if provided string is an operator.
+     *
+     * @param {String} string
+     * @returns  {Boolean}
+     */
     isOperator(string) {
         return (
             string === '+' ||
@@ -46,6 +88,11 @@ export class MainOperation {
         );
     }
 
+    /**
+     * Replace operators by machine readable versions.
+     *
+     * @returns {String}
+     */
     machineOperation() {
         let output = this._operation;
 
