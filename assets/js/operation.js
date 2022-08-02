@@ -57,45 +57,50 @@ export class MainOperation {
     }
 
     /**
+     * Return the last character of current operation.
+     *
+     * @returns {String}
+     */
+    lastCharacterOfOperation() {
+        return this._operation.charAt(this._operation.length - 1);
+    }
+
+    /**
      * Check if actual operation is computable.
-     * If last character is an operator, return false.
-     * Otherwise return true.
+     * If last character is a number or )
+     * and there is no empty parenthesis
+     * and all parenthesis are closed
+     * return TRUE.
+     * Otherwise return FALSE.
      *
      * @returns {Boolean}
      */
     isComputable() {
-        // get last character of operation
-        const lastCharacter = this._operation.charAt(
-            this._operation.length - 1
-        );
-        // check if last char. is a number or )
-        //and all paranthesis are closed.
         return (
-            (this.isClosingParenthesis(lastCharacter) ||
-                this.isNumber(lastCharacter)) &&
+            (this.isClosingParenthesis() || this.isNumber()) &&
             this.isParenthesisAreClosed() &&
             this.isNoEmptyParenthesis()
         );
     }
 
     /**
-     * Check if provided string is a number.
+     * Check if last character of current operation is a number.
      *
      * @param {String} string
      * @returns {Boolean}
      */
-    isNumber(string) {
-        return !isNaN(string);
+    isNumber() {
+        return !isNaN(this.lastCharacterOfOperation());
     }
 
     /**
-     * Check if provided string isa closing parenthesis.
+     * Check if last character of current operation is a closing parenthesis.
      *
      * @param {String} string
      * @returns {Boolean}
      */
-    isClosingParenthesis(string) {
-        return string === ')';
+    isClosingParenthesis() {
+        return this.lastCharacterOfOperation() === ')';
     }
 
     /**
