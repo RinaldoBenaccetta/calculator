@@ -40,8 +40,12 @@ const addOperationListener = (element, listenerOperationSign, Operation) => {
 
 const addProcessListener = (element, Operation) => {
     element.addEventListener('click', () => {
+        // get the result
+        const result = Operation.computeResult();
         // show the result
-        refreshResultDisplay(Operation.computeResult());
+        if (result) {
+            refreshResultDisplay(result);
+        }
     });
 };
 

@@ -12,7 +12,11 @@ export class MainOperation {
     }
 
     computeResult() {
-        return Function('return ' + this.computableOperation())();
+        // if last character is an operator, return false
+        // otherwise return the result of machine operation version
+        return this.isComputable()
+            ? false
+            : Function('return ' + this.machineOperation())();
     }
 
     ce() {
@@ -23,16 +27,26 @@ export class MainOperation {
         this._operation = '';
     }
 
-    // checkComputeError() {
-    //     const lastCharacter = this._operation.charAt(this._operation.length - 1);
-    //     lastCharacter
-    // }
+    isComputable() {
+        // get last character of operation
+        const lastCharacter = this._operation.charAt(
+            this._operation.length - 1
+        );
+        // return the result of isOperator on the last character
+        return this.isOperator(lastCharacter);
+    }
 
-    // isOperator(string) {
-    //     return string === '+' || string === '-' || string === '';
-    // }
+    isOperator(string) {
+        return (
+            string === '+' ||
+            string === '-' ||
+            string === '÷' ||
+            string === 'x' ||
+            string === '%'
+        );
+    }
 
-    computableOperation() {
+    machineOperation() {
         let output = this._operation;
 
         output = output.replace('%', '/100');
