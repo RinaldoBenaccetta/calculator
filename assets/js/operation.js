@@ -12,7 +12,8 @@ export class MainOperation {
     }
 
     computeResult() {
-        return Function('return ' + this._operation)();
+        let toCompute = this._operation.replace('%', '/100');
+        return Function('return ' + toCompute)();
     }
 
     ce() {
