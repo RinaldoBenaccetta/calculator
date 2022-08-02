@@ -69,7 +69,10 @@ export class MainOperation {
             this._operation.length - 1
         );
         // return the result of isOperator on the last character
-        return this.isNumber(lastCharacter);
+        return (
+            this.isNumber(lastCharacter) ||
+            this.isClosingParenthesis(lastCharacter)
+        );
     }
 
     /**
@@ -80,6 +83,16 @@ export class MainOperation {
      */
     isNumber(string) {
         return !isNaN(string);
+    }
+
+    /**
+     * Check if provided string isa closing parenthesis.
+     *
+     * @param {String} string
+     * @returns {Boolean}
+     */
+    isClosingParenthesis(string) {
+        return string === ')';
     }
 
     /**
