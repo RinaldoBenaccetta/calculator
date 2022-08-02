@@ -1,3 +1,5 @@
+import { refreshOperationDisplay } from './dom-manipulation.js';
+
 export const listenButton = (element, listenerOperationSign, Operation) => {
     switch (listenerOperationSign) {
         case '':
@@ -17,6 +19,7 @@ const addEventListener = (element, listenerOperationSign, Operation) => {
     element.addEventListener('click', () => {
         // update Operation object
         Operation.updateOperation(listenerOperationSign);
-        console.log(Operation.getOperation());
+        // show operation in display of the calc.
+        refreshOperationDisplay(Operation.getOperation());
     });
 };
