@@ -2,7 +2,7 @@
  * The calculator collection ready to by processed.
  */
 export const layout = [
-    // result
+    // containers
     {
         tag: 'div',
         class: 'calculator__result',
@@ -10,7 +10,6 @@ export const layout = [
         parentId: 'main',
         text: '',
     },
-    // containers
     {
         tag: 'div',
         class: 'calculator__top-buttons',
@@ -30,6 +29,21 @@ export const layout = [
         class: 'calculator__operators',
         id: 'operator-buttons',
         parentId: 'main',
+        text: '',
+    },
+    // result
+    {
+        tag: 'div',
+        class: 'calculator__result__operation',
+        id: 'operation-display',
+        parentId: 'result',
+        text: '',
+    },
+    {
+        tag: 'div',
+        class: 'calculator__result__result',
+        id: 'result-display',
+        parentId: 'result',
         text: '',
     },
     // top buttons
