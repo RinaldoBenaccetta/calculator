@@ -1,6 +1,8 @@
 import { refreshOperationDisplay } from './dom-manipulation.js';
 import { refreshResultDisplay } from './dom-manipulation.js';
 
+import { animateError } from './animate.js';
+
 /**
  * Add or not the listener according to the button operation.
  *
@@ -169,7 +171,9 @@ const addProcessListener = (element, Operation) => {
 };
 
 /**
- * Compute the actual operation and display the result in DOM.
+ * Compute the actual operation.
+ * If the operation is ok, display the result in DOM.
+ * Otherwise, giggle the calc.
  *
  * @param {Object} Operation
  */
@@ -177,9 +181,8 @@ const addProcessHandler = (Operation) => {
     // get the result
     const result = Operation.computeResult();
     // show the result
-    if (result) {
-        refreshResultDisplay(result);
-    }
+
+    result ? refreshResultDisplay(result) : animateError();
 };
 
 /**
