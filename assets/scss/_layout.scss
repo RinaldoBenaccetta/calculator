@@ -1,5 +1,6 @@
 .calculator {
     width: 100vw;
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -7,13 +8,20 @@
     outline-color: orange;
 
     &__button {
-        width: 25vw;
-        //height: 25%;
+        height: 20%;
+
+        &--half {
+            height: 10%;
+        }
     }
 
+    // &__button {
+    //     width: 25%;
+    //     height: 25%;
+    // }
     &__result {
-        width: 100vw;
-        height: 20vh;
+        width: 100%;
+        height: 20%;
 
         outline-color: yellow;
 
@@ -22,50 +30,31 @@
         }
     }
 
-    &__top-buttons {
-        width: 100vw;
-        height: 100vh * 0.2;
+    &__keyboard {
+        width: 100%;
+        height: 80%;
 
         display: flex;
-        //flex-direction: row;
+        &__left-buttons {
+            width: 75%;
+            height: 100%;
 
-        outline-color: black;
-    }
-
-    &__bottom-buttons {
-        display: flex;
-        flex-direction: row;
-
-        &__operators {
-            width: 100vw * 0.25;
-            height: 100vh * 0.6;
-
-            display: flex;
-            flex-direction: column;
+            outline-color: white;
 
             button {
-                height: 25%;
+                width: 33.333333%;
             }
         }
 
-        &__main {
-            width: 100vw * 0.75;
-            height: 100vh * 0.6;
+        &__right-buttons {
+            width: 25%;
+            height: 100%;
 
-            flex-direction: column wrap;
+            outline-color: brown;
 
-            flex-wrap: wrap;
-
-            outline-color: pink;
-
-            .calculator__button {
-                //height: 25%;
+            button {
+                width: 100%;
             }
-        }
-
-        &__operators,
-        &__main {
-            display: flex;
         }
     }
 }

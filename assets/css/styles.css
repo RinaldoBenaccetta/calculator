@@ -311,49 +311,45 @@ template {
 
 .calculator {
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   outline-color: orange;
 }
 .calculator__button {
-  width: 25vw;
+  height: 20%;
+}
+.calculator__button--half {
+  height: 10%;
 }
 .calculator__result {
-  width: 100vw;
-  height: 20vh;
+  width: 100%;
+  height: 20%;
   outline-color: yellow;
 }
 .calculator__result__operation {
   height: 40%;
 }
-.calculator__top-buttons {
-  width: 100vw;
-  height: 20vh;
+.calculator__keyboard {
+  width: 100%;
+  height: 80%;
   display: flex;
-  outline-color: black;
 }
-.calculator__bottom-buttons {
-  display: flex;
-  flex-direction: row;
+.calculator__keyboard__left-buttons {
+  width: 75%;
+  height: 100%;
+  outline-color: white;
 }
-.calculator__bottom-buttons__operators {
-  width: 25vw;
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
+.calculator__keyboard__left-buttons button {
+  width: 33.333333%;
 }
-.calculator__bottom-buttons__operators button {
-  height: 25%;
+.calculator__keyboard__right-buttons {
+  width: 25%;
+  height: 100%;
+  outline-color: brown;
 }
-.calculator__bottom-buttons__main {
-  width: 75vw;
-  height: 60vh;
-  flex-direction: column wrap;
-  flex-wrap: wrap;
-  outline-color: pink;
-}
-.calculator__bottom-buttons__operators, .calculator__bottom-buttons__main {
-  display: flex;
+.calculator__keyboard__right-buttons button {
+  width: 100%;
 }
 
 body {
