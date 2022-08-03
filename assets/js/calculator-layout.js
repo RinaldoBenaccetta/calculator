@@ -49,7 +49,7 @@ export const layout = [
     // top buttons
     {
         tag: 'button',
-        class: 'calculator__top-buttons__open-parenthesis',
+        class: 'calculator__button',
         id: 'open-parenthesis',
         parentId: 'top-buttons',
         text: '(',
@@ -57,7 +57,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__top-buttons__closing-parenthesis',
+        class: 'calculator__button',
         id: 'closing-parenthesis',
         parentId: 'top-buttons',
         text: ')',
@@ -65,7 +65,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__top-buttons__percent',
+        class: 'calculator__button',
         id: 'percent',
         parentId: 'top-buttons',
         text: '%',
@@ -73,7 +73,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__top-buttons__ac',
+        class: 'calculator__button',
         id: 'ac',
         parentId: 'top-buttons',
         text: 'AC',
@@ -82,7 +82,7 @@ export const layout = [
     // main buttons
     {
         tag: 'button',
-        class: 'calculator__main__buttons__9',
+        class: 'calculator__button',
         id: '9',
         parentId: 'main-buttons',
         text: '9',
@@ -90,7 +90,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__8',
+        class: 'calculator__button',
         id: '8',
         parentId: 'main-buttons',
         text: '8',
@@ -98,7 +98,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__7',
+        class: 'calculator__button',
         id: '7',
         parentId: 'main-buttons',
         text: '7',
@@ -106,7 +106,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__6',
+        class: 'calculator__button',
         id: '6',
         parentId: 'main-buttons',
         text: '6',
@@ -114,7 +114,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__5',
+        class: 'calculator__button',
         id: '5',
         parentId: 'main-buttons',
         text: '5',
@@ -122,7 +122,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__4',
+        class: 'calculator__button',
         id: '4',
         parentId: 'main-buttons',
         text: '4',
@@ -130,7 +130,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__3',
+        class: 'calculator__button',
         id: '3',
         parentId: 'main-buttons',
         text: '3',
@@ -138,7 +138,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__2',
+        class: 'calculator__button',
         id: '2',
         parentId: 'main-buttons',
         text: '2',
@@ -146,7 +146,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__1',
+        class: 'calculator__button',
         id: '1',
         parentId: 'main-buttons',
         text: '1',
@@ -154,7 +154,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__0',
+        class: 'calculator__button',
         id: '0',
         parentId: 'main-buttons',
         text: '0',
@@ -162,7 +162,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__dot',
+        class: 'calculator__button',
         id: 'dot',
         parentId: 'main-buttons',
         text: '.',
@@ -170,7 +170,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__equal',
+        class: 'calculator__button',
         id: 'equal',
         parentId: 'main-buttons',
         text: '=',
@@ -178,7 +178,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__ce',
+        class: 'calculator__button',
         id: 'ce',
         parentId: 'main-buttons',
         text: 'ce',
@@ -187,7 +187,7 @@ export const layout = [
     // operators
     {
         tag: 'button',
-        class: 'calculator__main__buttons__divide',
+        class: 'calculator__button',
         id: 'divide',
         parentId: 'operator-buttons',
         text: '÷',
@@ -195,7 +195,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__multiply',
+        class: 'calculator__button',
         id: 'multiply',
         parentId: 'operator-buttons',
         text: 'x',
@@ -203,7 +203,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__substract',
+        class: 'calculator__button',
         id: 'substract',
         parentId: 'operator-buttons',
         text: '-',
@@ -211,7 +211,7 @@ export const layout = [
     },
     {
         tag: 'button',
-        class: 'calculator__main__buttons__add',
+        class: 'calculator__button',
         id: 'add',
         parentId: 'operator-buttons',
         text: '+',
