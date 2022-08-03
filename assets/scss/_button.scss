@@ -1,0 +1,10 @@
+.calculator {
+    &__button,
+    &__button--half {
+        outline: none;
+        border: 0;
+        outline: 1px solid $color-secondary;
+        background-color: $color-tertiary;
+        color: $color-fourth;
+    }
+}

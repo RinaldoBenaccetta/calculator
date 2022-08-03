@@ -312,6 +312,7 @@ template {
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
+  letter-spacing: 0.2rem;
 }
 
 .calculator__display__operation {
@@ -365,6 +366,9 @@ body {
   width: 100%;
 }
 
+.calculator__display {
+  color: #e94403;
+}
 .calculator__display__operation, .calculator__display__result {
   box-sizing: border-box;
   text-align: right;
@@ -372,4 +376,12 @@ body {
 }
 .calculator__display__operation {
   padding-top: 1.5rem;
+}
+
+.calculator__button, .calculator__button--half {
+  outline: none;
+  border: 0;
+  outline: 1px solid #e94403;
+  background-color: #faf2f0;
+  color: #914324;
 }/*# sourceMappingURL=styles.css.map */

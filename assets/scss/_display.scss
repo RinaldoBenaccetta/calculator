@@ -1,5 +1,6 @@
 .calculator {
     &__display {
+        color: $color-secondary;
         &__operation,
         &__result {
             box-sizing: border-box;
