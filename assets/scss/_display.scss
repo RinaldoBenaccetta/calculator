@@ -1,0 +1,14 @@
+.calculator {
+    &__display {
+        &__operation,
+        &__result {
+            box-sizing: border-box;
+            text-align: right;
+            padding: 0.75rem;
+        }
+
+        &__operation {
+            padding-top: 1.5rem;
+        }
+    }
+}

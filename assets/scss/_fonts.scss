@@ -4,13 +4,15 @@ body {
 }
 
 .calculator {
-    &__result {
+    &__display {
         &__operation {
+            line-height: 1.5rem;
             font-size: 1.5rem;
         }
 
         &__result {
-            font-size: 3.5rem;
+            line-height: 3rem;
+            font-size: 3rem;
         }
     }
 }

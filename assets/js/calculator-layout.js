@@ -5,7 +5,7 @@ export const layout = [
     // containers
     {
         tag: 'div',
-        class: 'calculator__result',
+        class: 'calculator__display',
         id: 'result',
         parentId: 'main',
         text: '',
@@ -48,14 +48,14 @@ export const layout = [
     // result
     {
         tag: 'div',
-        class: 'calculator__result__operation',
+        class: 'calculator__display__operation',
         id: 'operation-display',
         parentId: 'result',
         text: '',
     },
     {
         tag: 'div',
-        class: 'calculator__result__result',
+        class: 'calculator__display__result',
         id: 'result-display',
         parentId: 'result',
         text: '',
