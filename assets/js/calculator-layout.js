@@ -19,16 +19,23 @@ export const layout = [
     },
     {
         tag: 'div',
-        class: 'calculator__main-buttons',
-        id: 'main-buttons',
+        class: 'calculator__bottom-buttons',
+        id: 'bottom-buttons',
         parentId: 'main',
         text: '',
     },
     {
         tag: 'div',
-        class: 'calculator__operators',
+        class: 'calculator__bottom-buttons__main',
+        id: 'main-buttons',
+        parentId: 'bottom-buttons',
+        text: '',
+    },
+    {
+        tag: 'div',
+        class: 'calculator__bottom-buttons__operators',
         id: 'operator-buttons',
-        parentId: 'main',
+        parentId: 'bottom-buttons',
         text: '',
     },
     // result

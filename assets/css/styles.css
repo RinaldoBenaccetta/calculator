@@ -316,7 +316,7 @@ template {
   outline-color: orange;
 }
 .calculator__result {
-  width: 100%;
+  width: 100vw;
   height: 20vh;
   outline-color: yellow;
 }
@@ -324,8 +324,32 @@ template {
   height: 40%;
 }
 .calculator__top-buttons {
-  width: 100%;
-  height: 100vh/6;
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  outline-color: black;
+}
+.calculator__bottom-buttons {
+  display: flex;
+  flex-direction: row;
+}
+.calculator__bottom-buttons__operators {
+  width: 25vw;
+  height: 60vh;
+}
+.calculator__bottom-buttons__main {
+  width: 75vw;
+  height: 60vh;
+  flex-direction: column wrap;
+  outline-color: pink;
+}
+.calculator__bottom-buttons__main .calculator__button {
+  display: block;
+  width: 33%;
+  height: 25%;
+}
+.calculator__bottom-buttons__operators, .calculator__bottom-buttons__main {
+  display: flex;
 }
 
 body {
