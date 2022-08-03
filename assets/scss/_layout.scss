@@ -2,6 +2,14 @@
     width: 100vw;
     height: 100vh;
 
+    @include media-screen-large {
+        width: 680px;
+        height: 90vh;
+        max-height: 1000px;
+        margin: auto;
+        margin-top: 5vh;
+    }
+
     display: flex;
     flex-direction: column;
 
@@ -15,6 +23,10 @@
     &__display {
         width: 100%;
         height: 20%;
+
+        @include media-screen-large {
+            outline: 1px solid $color-secondary;
+        }
 
         &__operation {
             height: 40%;
