@@ -195,7 +195,7 @@ export const layout = [
         class: 'calculator__button--half',
         id: 'ce',
         parentId: 'right-buttons',
-        text: 'ce',
+        text: 'CE',
         listenerOperationSign: 'ce',
     },
     // operators

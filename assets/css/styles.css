@@ -309,12 +309,23 @@ template {
   display: none;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+}
+
+.calculator__result__operation {
+  font-size: 1.5rem;
+}
+.calculator__result__result {
+  font-size: 3.5rem;
+}
+
 .calculator {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  outline-color: orange;
 }
 .calculator__button {
   height: 20%;
@@ -325,10 +336,12 @@ template {
 .calculator__result {
   width: 100%;
   height: 20%;
-  outline-color: yellow;
 }
 .calculator__result__operation {
   height: 40%;
+}
+.calculator__result__result {
+  height: 60%;
 }
 .calculator__keyboard {
   width: 100%;
@@ -338,7 +351,6 @@ template {
 .calculator__keyboard__left-buttons {
   width: 75%;
   height: 100%;
-  outline-color: white;
 }
 .calculator__keyboard__left-buttons button {
   width: 33.333333%;
@@ -346,7 +358,6 @@ template {
 .calculator__keyboard__right-buttons {
   width: 25%;
   height: 100%;
-  outline-color: brown;
 }
 .calculator__keyboard__right-buttons button {
   width: 100%;
