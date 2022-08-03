@@ -1,13 +1,17 @@
 .calculator {
-    width: 100vw;
-    height: 100vh;
+    &__container {
+        position: relative; // for animation when error.
 
-    @include media-screen-large {
-        width: 680px;
-        height: 90vh;
-        max-height: 1000px;
-        margin: auto;
-        margin-top: 5vh;
+        width: 100vw;
+        height: 100vh;
+
+        @include media-screen-large {
+            width: 680px;
+            height: 90vh;
+            max-height: 1000px;
+            margin: auto;
+            margin-top: 5vh;
+        }
     }
 
     display: flex;

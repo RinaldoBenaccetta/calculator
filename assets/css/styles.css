@@ -325,13 +325,16 @@ body {
 }
 
 .calculator {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
+.calculator__container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
 @media screen and (min-width: 1024px) {
-  .calculator {
+  .calculator__container {
     width: 680px;
     height: 90vh;
     max-height: 1000px;
@@ -403,4 +406,23 @@ body {
 .calculator__button:hover, .calculator__button--half:hover {
   background-color: #e94403;
   color: #faf2f0;
+}
+
+.giggle {
+  animation-name: giggle;
+  animation-duration: 0.15s;
+  animation-iteration-count: 5;
+}
+
+@keyframes giggle {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  50% {
+    left: -5px;
+  }
+  100% {
+    left: 5px;
+  }
 }/*# sourceMappingURL=styles.css.map */

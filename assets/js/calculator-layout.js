@@ -5,16 +5,23 @@ export const layout = [
     // containers
     {
         tag: 'div',
+        class: 'calculator__container',
+        id: 'container',
+        parentId: 'main',
+        text: '',
+    },
+    {
+        tag: 'div',
         class: 'calculator__display',
         id: 'result',
-        parentId: 'main',
+        parentId: 'container',
         text: '',
     },
     {
         tag: 'div',
         class: 'calculator__keyboard',
         id: 'keyboard',
-        parentId: 'main',
+        parentId: 'container',
         text: '',
     },
     {
