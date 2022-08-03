@@ -6,5 +6,13 @@
         outline: 1px solid $color-secondary;
         background-color: $color-tertiary;
         color: $color-fourth;
+
+        transition: background-color $transition-time-primary,
+            color $transition-time-primary;
+
+        &:hover {
+            background-color: $color-secondary;
+            color: $color-tertiary;
+        }
     }
 }

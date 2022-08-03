@@ -81,7 +81,7 @@ export class MainOperation {
                 this.isNumber() ||
                 this.lastCharacterIsPercent()) &&
             this.isParenthesisAreClosed() &&
-            this.isNoEmptyParenthesis()
+            this.haveNoDoubleDot()
         );
     }
 
@@ -135,6 +135,16 @@ export class MainOperation {
     isNoEmptyParenthesis() {
         const emptyParenthesis = this._operation.split('()').length - 1;
         return emptyParenthesis === 0;
+    }
+
+    /**
+     * Check if there is no double dot or more in actual operation.
+     *
+     * @returns {Boolean}
+     */
+    haveNoDoubleDot() {
+        const doubleDot = this._operation.split('..').length - 1;
+        return doubleDot === 0;
     }
 
     /**

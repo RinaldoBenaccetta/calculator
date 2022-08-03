@@ -398,4 +398,9 @@ body {
   outline: 1px solid #e94403;
   background-color: #faf2f0;
   color: #914324;
+  transition: background-color 0.15s, color 0.15s;
+}
+.calculator__button:hover, .calculator__button--half:hover {
+  background-color: #e94403;
+  color: #faf2f0;
 }/*# sourceMappingURL=styles.css.map */
