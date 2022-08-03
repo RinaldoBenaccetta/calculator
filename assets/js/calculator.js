@@ -1,6 +1,7 @@
 import { createInDom } from './build-calculator-template.js';
 import { layout } from './calculator-layout.js';
 import { MainOperation } from './operation.js';
+import { listenKeyboard } from './button-listener.js';
 
 function computeResult(str) {
     return Function('return ' + str)();
@@ -39,6 +40,7 @@ const showCalculator = (layout, Operation) => {
 const mainCalculator = () => {
     const Operation = new MainOperation();
     showCalculator(layout, Operation);
+    listenKeyboard(Operation);
 };
 
 mainCalculator();

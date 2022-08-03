@@ -41,6 +41,94 @@ export const listenButton = (element, listenerOperationSign, Operation) => {
 };
 
 /**
+ * Add event listener to body listening for key up.
+ */
+export const listenKeyboard = (Operation) => {
+    document.body.addEventListener('keyup', (e) => {
+        eventResponse(e, Operation);
+    });
+};
+
+/**
+ * Manage the pressed key and call the corresponding function.
+ *
+ * @param {Object} e
+ * @param {Object} Operation
+ */
+const eventResponse = (e, Operation) => {
+    const event = e.key; // the key pressed
+    const key = checkKey(event);
+
+    switch (key) {
+        case 'process':
+            addProcessHandler(Operation);
+            break;
+
+        case 'operator':
+            operationHandler(event, Operation);
+            break;
+
+        case 'ac':
+            addAcHandler(Operation);
+            break;
+
+        case 'ce':
+            addCeHandler(Operation);
+            break;
+
+        default:
+            break;
+    }
+};
+
+/**
+ * Check if provided key is a number or accepted operator.
+ *
+ * @param {String} key
+ * @returns {Boolean}
+ */
+const isOperatorOrNumber = (key) => {
+    const operatorsAndNumbers = '01234567890.+-/*%()';
+    return operatorsAndNumbers.indexOf(key) > -1;
+};
+
+/**
+ * Check the key to return the according operation.
+ *
+ * @param {String} key
+ * @returns {String}
+ */
+const checkKey = (key) => {
+    // First chek if key is operator or number.
+    key = isOperatorOrNumber(key) ? 'operator' : key;
+
+    switch (key) {
+        case 'operator':
+            return 'operator';
+            break;
+
+        case '=':
+            return 'process';
+            break;
+
+        case 'Enter':
+            return 'process';
+            break;
+
+        case 'Escape':
+            return 'ac';
+            break;
+
+        case 'Delete':
+            return 'ce';
+            break;
+
+        default:
+            break;
+    }
+};
+
+/**
  * Add an event listener to call the handler
  * for adding number or operator to actual operation.
  *
