@@ -315,6 +315,9 @@ template {
   flex-direction: column;
   outline-color: orange;
 }
+.calculator__button {
+  width: 25vw;
+}
 .calculator__result {
   width: 100vw;
   height: 20vh;
@@ -336,17 +339,18 @@ template {
 .calculator__bottom-buttons__operators {
   width: 25vw;
   height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+.calculator__bottom-buttons__operators button {
+  height: 25%;
 }
 .calculator__bottom-buttons__main {
   width: 75vw;
   height: 60vh;
   flex-direction: column wrap;
+  flex-wrap: wrap;
   outline-color: pink;
-}
-.calculator__bottom-buttons__main .calculator__button {
-  display: block;
-  width: 33%;
-  height: 25%;
 }
 .calculator__bottom-buttons__operators, .calculator__bottom-buttons__main {
   display: flex;
