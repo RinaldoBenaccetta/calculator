@@ -1,0 +1,11 @@
+@import 'normalize', 'variables', 'mixins', 'fonts', 'layout';
+
+@if $dev == true {
+    body {
+        background-color: green;
+    }
+
+    * {
+        outline: 1px solid red;
+    }
+}
