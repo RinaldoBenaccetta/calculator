@@ -35,17 +35,17 @@ export class MainOperation {
 
     /**
      * Return the result of current operation.
-     * If last character of actual operation is an operator,
-     * return false.
-     * otherwise return the result of the actual operation.
+     * If there is an error on the operation return false that can be handled
+     * by the function that calling computeResult.
      *
      * @returns {false|Number}
      */
     computeResult() {
-        return this.isComputable()
-            ? // the operation is translated in machine version before compute.
-              Function('return ' + this.machineOperation())()
-            : false;
+        try {
+            return Function('return ' + this.machineOperation())();
+        } catch (error) {
+            return false;
+        }
     }
 
     /**
@@ -69,78 +69,6 @@ export class MainOperation {
      */
     lastCharacterOfOperation() {
         return this._operation.charAt(this._operation.length - 1);
-    }
-
-    /**
-     * Check if actual operation is computable.
-     * If last character is a number or )
-     * and there is no empty parenthesis
-     * and all parenthesis are closed
-     * return TRUE.
-     * Otherwise return FALSE.
-     *
-     * @returns {Boolean}
-     */
-    isComputable() {
-        return (
-            (this.isClosingParenthesis() ||
-                this.isNumber() ||
-                this.lastCharacterIsPercent()) &&
-            this.isParenthesisAreClosed() &&
-            this.haveNoDoubleDot()
-        );
-    }
-
-    /**
-     * Check if last character of current operation is a number.
-     *
-     * @param {String} string
-     * @returns {Boolean}
-     */
-    isNumber() {
-        return !isNaN(this.lastCharacterOfOperation());
-    }
-
-    /**
-     * Check if last character of current operation is
-     * a closing parenthesis.
-     *
-     * @param {String} string
-     * @returns {Boolean}
-     */
-    isClosingParenthesis() {
-        return this.lastCharacterOfOperation() === ')';
-    }
-
-    /**
-     * Check if last character of current operation is percent.
-     *
-     * @returns {Boolean}
-     */
-    lastCharacterIsPercent() {
-        return this.lastCharacterOfOperation() === '%';
-    }
-
-    /**
-     * Check if parenthesis are all closed.
-     *
-     * @returns {Boolean}
-     */
-    isParenthesisAreClosed() {
-        const openParenthesisCount = this._operation.split('(').length - 1;
-        const closingParenthesisCount = this._operation.split(')').length - 1;
-
-        return openParenthesisCount === closingParenthesisCount;
-    }
-
-    /**
-     * Check if there is not empty parenthesis.
-     *
-     * @returns {boolean}
-     */
-    isNoEmptyParenthesis() {
-        const emptyParenthesis = this._operation.split('()').length - 1;
-        return emptyParenthesis === 0;
     }
 
     /**
@@ -209,4 +137,76 @@ export class MainOperation {
     replaceLastCharacter(character) {
         this._operation = this._operation.slice(0, -1) + character;
     }
+
+    // /**
+    //  * Check if actual operation is computable.
+    //  * If last character is a number or )
+    //  * and there is no empty parenthesis
+    //  * and all parenthesis are closed
+    //  * return TRUE.
+    //  * Otherwise return FALSE.
+    //  *
+    //  * @returns {Boolean}
+    //  */
+    // isComputable() {
+    //     return (
+    //         (this.isClosingParenthesis() ||
+    //             this.isNumber() ||
+    //             this.lastCharacterIsPercent()) &&
+    //         this.isParenthesisAreClosed() &&
+    //         this.haveNoDoubleDot()
+    //     );
+    // }
+
+    // /**
+    //  * Check if last character of current operation is a number.
+    //  *
+    //  * @param {String} string
+    //  * @returns {Boolean}
+    //  */
+    // isNumber() {
+    //     return !isNaN(this.lastCharacterOfOperation());
+    // }
+
+    // /**
+    //  * Check if last character of current operation is
+    //  * a closing parenthesis.
+    //  *
+    //  * @param {String} string
+    //  * @returns {Boolean}
+    //  */
+    // isClosingParenthesis() {
+    //     return this.lastCharacterOfOperation() === ')';
+    // }
+
+    // /**
+    //  * Check if last character of current operation is percent.
+    //  *
+    //  * @returns {Boolean}
+    //  */
+    // lastCharacterIsPercent() {
+    //     return this.lastCharacterOfOperation() === '%';
+    // }
+
+    // /**
+    //  * Check if parenthesis are all closed.
+    //  *
+    //  * @returns {Boolean}
+    //  */
+    // isParenthesisAreClosed() {
+    //     const openParenthesisCount = this._operation.split('(').length - 1;
+    //     const closingParenthesisCount = this._operation.split(')').length - 1;
+
+    //     return openParenthesisCount === closingParenthesisCount;
+    // }
+
+    // /**
+    //  * Check if there is not empty parenthesis.
+    //  *
+    //  * @returns {boolean}
+    //  */
+    // isNoEmptyParenthesis() {
+    //     const emptyParenthesis = this._operation.split('()').length - 1;
+    //     return emptyParenthesis === 0;
+    // }
 }
