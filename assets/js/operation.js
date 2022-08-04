@@ -19,19 +19,18 @@ export class MainOperation {
     }
 
     /**
-     * Check if the last character of the operation is an operator.
-     * If not, add the provided string to the end of
-     * the current operation string.
-     * If it is an operator, check if the new provided character is an operator,
-     * replace it if it is, and add the provided string to the end of
-     * the current operation string if not.
+     * Check if provided character and last character
+     * of operation are operators.
+     * If they are both, replace the last character of current operation
+     * by the new one.
+     * Otherwise, add new character to the end of the operation.
      *
-     * @param {String} operationString
+     * @param {String} newCharacter
      */
-    updateOperation(operationString) {
-        this.lastCharacterIsOperator()
-            ? this.checkLastCharacter(operationString)
-            : (this._operation += operationString);
+    updateOperation(newCharacter) {
+        this.lastAndNewCharactersAreOperators(newCharacter)
+            ? this.replaceLastCharacter(newCharacter)
+            : (this._operation += newCharacter);
     }
 
     /**
@@ -170,22 +169,43 @@ export class MainOperation {
         return output;
     }
 
-    checkLastCharacter(newCharacter) {
-        if (this.isOperator(newCharacter) && this.lastCharacterIsOperator()) {
-            this.replaceLastCharacter(newCharacter);
-        }
+    /**
+     * Check if both provided character and last character
+     * of operation are operators.
+     *
+     * @param {String} newCharacter
+     * @returns {Boolean}
+     */
+    lastAndNewCharactersAreOperators(newCharacter) {
+        return this.isOperator(newCharacter) && this.lastCharacterIsOperator();
     }
 
-    lastCharacterIsOperator() {
-        return this.isOperator(this.lastCharacterOfOperation());
-    }
-
+    /**
+     * Check if provided character is an operator.
+     *
+     * @param {String} string
+     * @returns {Boolean}
+     */
     isOperator(string) {
         return (
             string === 'x' || string === '÷' || string === '-' || string === '+'
         );
     }
 
+    /**
+     * Check if last character of actual operation is an operator.
+     *
+     * @returns {Boolean}
+     */
+    lastCharacterIsOperator() {
+        return this.isOperator(this.lastCharacterOfOperation());
+    }
+
+    /**
+     * Raplace last character of actual operation by the provided one.
+     *
+     * @param {String} character
+     */
     replaceLastCharacter(character) {
         this._operation = this._operation.slice(0, -1) + character;
     }
