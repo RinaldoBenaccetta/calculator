@@ -23,14 +23,23 @@ export class MainOperation {
      * of operation are operators.
      * If they are both, replace the last character of current operation
      * by the new one.
+     * Check if last character is closing parenthesis or percent
+     * and if provided character is number.
+     * If it's the case, add 'x' before the character.
      * Otherwise, add new character to the end of the operation.
      *
      * @param {String} newCharacter
      */
     updateOperation(newCharacter) {
-        this.lastAndNewCharactersAreOperators(newCharacter)
-            ? this.replaceLastCharacter(newCharacter)
-            : (this._operation += newCharacter);
+        if (this.lastAndNewCharactersAreOperators(newCharacter)) {
+            this.replaceLastCharacter(newCharacter);
+        } else if (
+            this.lastCharacterIsParenthesisOrPercentAndNewIsNumber(newCharacter)
+        ) {
+            this._operation += 'x' + newCharacter;
+        } else {
+            this._operation += newCharacter;
+        }
     }
 
     /**
@@ -98,6 +107,21 @@ export class MainOperation {
     }
 
     /**
+     * Check if last character is closing parenthesis or percent
+     * and if provided character is number.
+     *
+     * @param {String} newCharacter
+     * @returns {Boolean}
+     */
+    lastCharacterIsParenthesisOrPercentAndNewIsNumber(newCharacter) {
+        return (
+            (this.lastCharacterOfOperation() === ')' ||
+                this.lastCharacterOfOperation() === '%') &&
+            this.isNumber(newCharacter)
+        );
+    }
+
+    /**
      * Check if both provided character and last character
      * of operation are operators.
      *
@@ -106,6 +130,16 @@ export class MainOperation {
      */
     lastAndNewCharactersAreOperators(newCharacter) {
         return this.isOperator(newCharacter) && this.lastCharacterIsOperator();
+    }
+
+    /**
+     * Check if provide character is a number.
+     *
+     * @param {String} string
+     * @returns {Boolean}
+     */
+    isNumber(string) {
+        return !isNaN(string);
     }
 
     /**
