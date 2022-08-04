@@ -158,6 +158,7 @@ export class MainOperation {
         output = output.replace(/%/g, '/100');
         output = output.replace(/x/g, '*');
         output = output.replace(/÷/g, '/');
+        output = output.replace(/\)\(/g, ')*(');
 
         return output;
     }
