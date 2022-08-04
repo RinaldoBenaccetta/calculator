@@ -47,7 +47,6 @@ export const listenButton = (element, listenerOperationSign, Operation) => {
  */
 export const listenKeyboard = (Operation) => {
     document.body.addEventListener('keyup', (e) => {
-        console.log(e.key);
         eventResponse(e, Operation);
     });
 };

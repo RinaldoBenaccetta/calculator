@@ -24,6 +24,7 @@ export class MainOperation {
      * @param {String} operationString
      */
     updateOperation(operationString) {
+        //this.checkLastCharacter(operationString);
         this._operation += operationString;
     }
 
@@ -162,4 +163,34 @@ export class MainOperation {
 
         return output;
     }
+
+    // checkLastCharacter(newCharacter) {
+    //     if (this.isOperator(newCharacter) && this.lastCharacterIsOperator()) {
+    //         console.log('checkLastCharacter');
+    //         this.replaceLastCharacter(newCharacter);
+    //     }
+    // }
+
+    // lastCharacterIsOperator() {
+    //     console.log('lastCharacterIsOperator');
+    //     if (this.isOperator(this.lastCharacterOfOperation())) {
+    //         console.log('operator');
+    //         return true;
+    //     }
+    //     return this.isOperator(this.lastCharacterOfOperation());
+    // }
+
+    // isOperator(string) {
+    //     return (
+    //         string.includes('x') ||
+    //         string.includes('÷' || string.includes('-')) ||
+    //         string.includes('+')
+    //     );
+    // }
+
+    // replaceLastCharacter(character) {
+    //     console.log('replaceLastCharacter');
+    //     //return this._operation.replace(/$/, character);
+    //     this._operation.slice(0, -1);
+    // }
 }
