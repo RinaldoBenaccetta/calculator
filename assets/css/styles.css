@@ -343,6 +343,11 @@ body {
     margin-top: 5vh;
   }
 }
+@media screen and (min-width: 1024px) and (min-width: 1024px) {
+  .calculator__container {
+    border: 1px solid #e94403;
+  }
+}
 .calculator__button {
   height: 20%;
 }
@@ -352,11 +357,6 @@ body {
 .calculator__display {
   width: 100%;
   height: 20%;
-}
-@media screen and (min-width: 1024px) {
-  .calculator__display {
-    outline: 1px solid #e94403;
-  }
 }
 .calculator__display__operation {
   height: 40%;
