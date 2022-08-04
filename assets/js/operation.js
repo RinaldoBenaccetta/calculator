@@ -89,7 +89,7 @@ export class MainOperation {
     machineOperation() {
         let output = this._operation;
 
-        output = output.replace(/%/g, '/100');
+        output = output.replace(/%/g, '/(100)');
         output = output.replace(/x/g, '*');
         output = output.replace(/÷/g, '/');
         output = output.replace(/\)\(/g, ')*(');
