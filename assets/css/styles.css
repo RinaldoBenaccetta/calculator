@@ -403,9 +403,11 @@ body {
   color: #914324;
   transition: background-color 0.15s, color 0.15s;
 }
-.calculator__button:hover, .calculator__button--half:hover {
-  background-color: #e94403;
-  color: #faf2f0;
+@media (hover: hover) {
+  .calculator__button:hover, .calculator__button--half:hover {
+    background-color: #e94403;
+    color: #faf2f0;
+  }
 }
 
 .giggle {

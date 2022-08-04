@@ -10,9 +10,11 @@
         transition: background-color $transition-time-primary,
             color $transition-time-primary;
 
-        &:hover {
-            background-color: $color-secondary;
-            color: $color-tertiary;
+        @media (hover: hover) {
+            &:hover {
+                background-color: $color-secondary;
+                color: $color-tertiary;
+            }
         }
     }
 }
