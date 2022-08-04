@@ -150,14 +150,29 @@ const addOperationListener = (element, listenerOperationSign, Operation) => {
 /**
  * Add operator or number to the actual operation.
  *
- * @param {String} listenerOperationSign
+ * @param {String} operator
  * @param {Object} Operation
  */
-const operationHandler = (listenerOperationSign, Operation) => {
+const operationHandler = (operator, Operation) => {
+    // filter key to transfomr / in ÷ , and * in x
+    operator = filterKeyboardOperator(operator);
     // update Operation object
-    Operation.updateOperation(listenerOperationSign);
+    Operation.updateOperation(operator);
     // show operation in display of the calc.
     refreshOperationDisplay(Operation.getOperation());
+};
+
+const filterKeyboardOperator = (operator) => {
+    switch (operator) {
+        case '/':
+            return '÷';
+
+        case '*':
+            return 'x';
+
+        default:
+            return operator;
+    }
 };
 
 /**
