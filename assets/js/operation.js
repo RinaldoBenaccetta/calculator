@@ -24,7 +24,8 @@ export class MainOperation {
      * @param {String} operationString
      */
     updateOperation(operationString) {
-        //this.checkLastCharacter(operationString);
+        this.checkLastCharacter(operationString);
+        //this.lastCharacterIsOperator();
         this._operation += operationString;
     }
 
@@ -164,33 +165,33 @@ export class MainOperation {
         return output;
     }
 
-    // checkLastCharacter(newCharacter) {
-    //     if (this.isOperator(newCharacter) && this.lastCharacterIsOperator()) {
-    //         console.log('checkLastCharacter');
-    //         this.replaceLastCharacter(newCharacter);
-    //     }
-    // }
+    checkLastCharacter(newCharacter) {
+        console.log(this.isOperator(newCharacter));
+        if (this.isOperator(newCharacter) && this.lastCharacterIsOperator()) {
+            console.log('double operator');
+            //this.replaceLastCharacter(newCharacter);
+        }
+    }
 
-    // lastCharacterIsOperator() {
-    //     console.log('lastCharacterIsOperator');
-    //     if (this.isOperator(this.lastCharacterOfOperation())) {
-    //         console.log('operator');
-    //         return true;
-    //     }
-    //     return this.isOperator(this.lastCharacterOfOperation());
-    // }
+    lastCharacterIsOperator() {
+        return this.isOperator(this.lastCharacterOfOperation());
 
-    // isOperator(string) {
-    //     return (
-    //         string.includes('x') ||
-    //         string.includes('÷' || string.includes('-')) ||
-    //         string.includes('+')
-    //     );
-    // }
+        // if (this.isOperator(this.lastCharacterOfOperation())) {
+        //     console.log('operator');
+        //     return true;
+        // }
+        // return this.isOperator(this.lastCharacterOfOperation());
+    }
 
-    // replaceLastCharacter(character) {
-    //     console.log('replaceLastCharacter');
-    //     //return this._operation.replace(/$/, character);
-    //     this._operation.slice(0, -1);
-    // }
+    isOperator(string) {
+        return (
+            string === 'x' || string === '÷' || string === '-' || string === '+'
+        );
+    }
+
+    replaceLastCharacter(character) {
+        console.log('replaceLastCharacter');
+        //return this._operation.replace(/$/, character);
+        this._operation.slice(0, -1);
+    }
 }
