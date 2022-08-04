@@ -19,14 +19,19 @@ export class MainOperation {
     }
 
     /**
-     * Add the provided string to the end of the current operation string.
+     * Check if the last character of the operation is an operator.
+     * If not, add the provided string to the end of
+     * the current operation string.
+     * If it is an operator, check if the new provided character is an operator,
+     * replace it if it is, and add the provided string to the end of
+     * the current operation string if not.
      *
      * @param {String} operationString
      */
     updateOperation(operationString) {
-        this.checkLastCharacter(operationString);
-        //this.lastCharacterIsOperator();
-        this._operation += operationString;
+        this.lastCharacterIsOperator()
+            ? this.checkLastCharacter(operationString)
+            : (this._operation += operationString);
     }
 
     /**
@@ -166,21 +171,13 @@ export class MainOperation {
     }
 
     checkLastCharacter(newCharacter) {
-        console.log(this.isOperator(newCharacter));
         if (this.isOperator(newCharacter) && this.lastCharacterIsOperator()) {
-            console.log('double operator');
-            //this.replaceLastCharacter(newCharacter);
+            this.replaceLastCharacter(newCharacter);
         }
     }
 
     lastCharacterIsOperator() {
         return this.isOperator(this.lastCharacterOfOperation());
-
-        // if (this.isOperator(this.lastCharacterOfOperation())) {
-        //     console.log('operator');
-        //     return true;
-        // }
-        // return this.isOperator(this.lastCharacterOfOperation());
     }
 
     isOperator(string) {
@@ -190,8 +187,6 @@ export class MainOperation {
     }
 
     replaceLastCharacter(character) {
-        console.log('replaceLastCharacter');
-        //return this._operation.replace(/$/, character);
-        this._operation.slice(0, -1);
+        this._operation = this._operation.slice(0, -1) + character;
     }
 }
