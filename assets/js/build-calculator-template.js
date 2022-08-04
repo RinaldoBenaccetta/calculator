@@ -1,23 +1,5 @@
-// export default {
-//     createElement(elementTag, elementClass, elementId) {
-//         // create a new section element
-//         const newElement = document.createElement(elementTag);
-//         // add class to it
-//         newElement.classList.add(elementClass);
-//         // add id to it
-//         newElement.id = elementId;
-
-//         return newElement;
-//     },
-//     createInDom(elementTag, elementClass, elementId, parentId) {
-//         // get the parent element
-//         const parent = document.querySelector(`#${parentId}`);
-//         // create and append new element to parent
-//         parent.append(elementTag, elementClass, elementId);
-//     },
-// };
-
-import { listenButton } from './button-listener.js';
+import { listenButton } from './listeners.js';
+import { layout } from './calculator-layout.js';
 
 /**
  * Create an element ready to be injected in DOM.
@@ -57,7 +39,7 @@ const createElement = (
  * @param {String} parentId
  * @param {String} elementInnerText
  */
-export const createInDom = (
+const createInDom = (
     elementTag,
     elementClass,
     elementId,
@@ -75,7 +57,30 @@ export const createInDom = (
         elementId,
         elementInnerText
     );
+
     // create and append new element to parent
     parent.append(newElement);
+
+    // listen the button
     listenButton(newElement, listenerOperationSign, Operation);
+};
+
+/**
+ * Read the provided array containing object with elements attributes
+ * and injects them in DOM.
+ *
+ * @param {Array.<Object>} layout
+ */
+export const showCalculator = (Operation) => {
+    for (const element of layout) {
+        createInDom(
+            element.tag,
+            element.class,
+            element.id,
+            element.parentId,
+            element.text,
+            element.listenerOperationSign,
+            Operation
+        );
+    }
 };

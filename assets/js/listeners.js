@@ -1,6 +1,5 @@
 import { refreshOperationDisplay } from './dom-manipulation.js';
 import { refreshResultDisplay } from './dom-manipulation.js';
-
 import { animateError } from './animate.js';
 
 /**
@@ -22,22 +21,22 @@ export const listenButton = (element, listenerOperationSign, Operation) => {
 
         // calculate the actual operation.
         case 'process':
-            addProcessListener(element, Operation);
+            processListener(element, Operation);
             break;
 
         // remove last character of actual operation.
         case 'ce':
-            addCeListener(element, Operation);
+            ceListener(element, Operation);
             break;
 
         // flush the actual opperation.
         case 'ac':
-            addAcListener(element, Operation);
+            acListener(element, Operation);
             break;
 
         // by default, add the character provided by the button.
         default:
-            addOperationListener(element, listenerOperationSign, Operation);
+            operationListener(element, listenerOperationSign, Operation);
             break;
     }
 };
@@ -63,7 +62,7 @@ const eventResponse = (e, Operation) => {
 
     switch (key) {
         case 'process':
-            addProcessHandler(Operation);
+            processHandler(Operation);
             break;
 
         case 'operator':
@@ -71,11 +70,11 @@ const eventResponse = (e, Operation) => {
             break;
 
         case 'ac':
-            addAcHandler(Operation);
+            acHandler(Operation);
             break;
 
         case 'ce':
-            addCeHandler(Operation);
+            ceHandler(Operation);
             break;
 
         default:
@@ -107,23 +106,18 @@ const checkKey = (key) => {
     switch (key) {
         case 'operator':
             return 'operator';
-            break;
 
         case '=':
             return 'process';
-            break;
 
         case 'Enter':
             return 'process';
-            break;
 
         case 'Escape':
             return 'ac';
-            break;
 
         case 'Delete':
             return 'ce';
-            break;
 
         case 'Backspace':
             return 'ce';
@@ -141,7 +135,7 @@ const checkKey = (key) => {
  * @param {String} listenerOperationSign
  * @param {Object} Operation
  */
-const addOperationListener = (element, listenerOperationSign, Operation) => {
+const operationListener = (element, listenerOperationSign, Operation) => {
     element.addEventListener('click', () => {
         operationHandler(listenerOperationSign, Operation);
     });
@@ -182,9 +176,9 @@ const filterKeyboardOperator = (operator) => {
  * @param {Node} element
  * @param {Object} Operation
  */
-const addProcessListener = (element, Operation) => {
+const processListener = (element, Operation) => {
     element.addEventListener('click', () => {
-        addProcessHandler(Operation);
+        processHandler(Operation);
     });
 };
 
@@ -195,7 +189,7 @@ const addProcessListener = (element, Operation) => {
  *
  * @param {Object} Operation
  */
-const addProcessHandler = (Operation) => {
+const processHandler = (Operation) => {
     // get the result
     const result = Operation.computeResult();
     // show the result
@@ -209,9 +203,9 @@ const addProcessHandler = (Operation) => {
  * @param {Node} element
  * @param {Object} Operation
  */
-const addCeListener = (element, Operation) => {
+const ceListener = (element, Operation) => {
     element.addEventListener('click', () => {
-        addCeHandler(Operation);
+        ceHandler(Operation);
     });
 };
 
@@ -221,7 +215,7 @@ const addCeListener = (element, Operation) => {
  *
  * @param {Object} Operation
  */
-const addCeHandler = (Operation) => {
+const ceHandler = (Operation) => {
     // remove last character of operation
     Operation.ce();
     // show the new operation in display
@@ -234,9 +228,9 @@ const addCeHandler = (Operation) => {
  * @param {Node} element
  * @param {Object} Operation
  */
-const addAcListener = (element, Operation) => {
+const acListener = (element, Operation) => {
     element.addEventListener('click', () => {
-        addAcHandler(Operation);
+        acHandler(Operation);
     });
 };
 
@@ -245,7 +239,7 @@ const addAcListener = (element, Operation) => {
  *
  * @param {Object} Operation
  */
-const addAcHandler = (Operation) => {
+const acHandler = (Operation) => {
     // flush the operation
     Operation.ac();
     // show the new empty operation in display

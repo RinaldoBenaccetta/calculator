@@ -87,6 +87,7 @@ export class MainOperation {
      */
     haveNoDoubleDot() {
         const doubleDot = this._operation.split('..').length - 1;
+
         return doubleDot === 0;
     }
 
