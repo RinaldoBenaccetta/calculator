@@ -325,6 +325,7 @@ body {
 }
 
 .calculator {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }

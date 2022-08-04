@@ -1,4 +1,6 @@
 .calculator {
+    overflow: hidden; // prevent scrolling bars on mobile when giggle.
+
     &__container {
         position: relative; // for animation when error.
 
