@@ -1,6 +1,8 @@
 .calculator {
     &__button,
     &__button--half {
+        position: relative;
+
         outline: none;
         border: 0;
         outline: 1px solid $color-secondary;
@@ -10,10 +12,49 @@
         transition: background-color $transition-time-primary,
             color $transition-time-primary;
 
+        // only for non touch screen
         @media (hover: hover) {
             &:hover {
                 background-color: $color-secondary;
                 color: $color-tertiary;
+            }
+        }
+
+        // prepare touch effect for touch screen.
+        &:after {
+            content: '';
+
+            z-index: 10;
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            left: 35%;
+            top: 35%;
+
+            width: 30%;
+            height: 30%;
+
+            opacity: 0;
+
+            box-shadow: 0 0 40px 40px $color-secondary;
+
+            filter: blur(5px);
+
+            transition: all $transition-time-secondary;
+        }
+
+        &:active {
+            background-color: $color-primary;
+
+            // only for touch screen
+            @media (hover: none) {
+                &:after {
+                    box-shadow: 0 0 0 0 $color-secondary;
+
+                    opacity: 1;
+                }
             }
         }
     }

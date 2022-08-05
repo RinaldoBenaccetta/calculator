@@ -1,5 +1,5 @@
-@import 'normalize', 'variables', 'mixins', 'fonts', 'layout', 'display',
-    'button', 'animation';
+@import 'normalize', 'variables', 'mixins', 'fonts', 'animation', 'layout',
+    'display', 'button';
 
 @if $dev == true {
     body {

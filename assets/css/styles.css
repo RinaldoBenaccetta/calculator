@@ -324,6 +324,24 @@ body {
   font-size: 3rem;
 }
 
+.giggle {
+  animation-name: giggle;
+  animation-duration: 0.15s;
+  animation-iteration-count: 5;
+}
+
+@keyframes giggle {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  50% {
+    left: -5px;
+  }
+  100% {
+    left: 5px;
+  }
+}
 .calculator {
   overflow: hidden;
   display: flex;
@@ -397,6 +415,7 @@ body {
 }
 
 .calculator__button, .calculator__button--half {
+  position: relative;
   outline: none;
   border: 0;
   outline: 1px solid #e94403;
@@ -410,22 +429,26 @@ body {
     color: #faf2f0;
   }
 }
-
-.giggle {
-  animation-name: giggle;
-  animation-duration: 0.15s;
-  animation-iteration-count: 5;
+.calculator__button:after, .calculator__button--half:after {
+  content: "";
+  z-index: 10;
+  position: absolute;
+  border-radius: 50%;
+  left: 35%;
+  top: 35%;
+  width: 30%;
+  height: 30%;
+  opacity: 0;
+  box-shadow: 0 0 40px 40px #e94403;
+  filter: blur(5px);
+  transition: all 0.2s;
 }
-
-@keyframes giggle {
-  0% {
-    left: 0px;
-    top: 0px;
-  }
-  50% {
-    left: -5px;
-  }
-  100% {
-    left: 5px;
+.calculator__button:active, .calculator__button--half:active {
+  background-color: white;
+}
+@media (hover: none) {
+  .calculator__button:active:after, .calculator__button--half:active:after {
+    box-shadow: 0 0 0 0 #e94403;
+    opacity: 1;
   }
 }/*# sourceMappingURL=styles.css.map */
