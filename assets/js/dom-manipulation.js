@@ -3,18 +3,16 @@
  *
  * @param {String} newOperation
  */
-export const refreshOperationDisplay = (newOperation) => {
+export const refreshOperationDisplay = (newOperation) =>
     updateElement('operation-display', newOperation);
-};
 
 /**
  * Update the display of the result in DOM.
  *
  * @param {String} result
  */
-export const refreshResultDisplay = (result) => {
+export const refreshResultDisplay = (result) =>
     updateElement('result-display', result);
-};
 
 /**
  * Replace the inner HTML of the element with the provided ID

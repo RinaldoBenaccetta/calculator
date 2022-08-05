@@ -7,7 +7,5 @@ export const animateError = () => {
     // add giggle class to container.
     container.classList.add('giggle');
     // wait before removing giggle class.
-    setTimeout(function () {
-        container.classList.remove('giggle');
-    }, 500);
+    setTimeout(() => container.classList.remove('giggle'), 500);
 };
