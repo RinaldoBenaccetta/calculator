@@ -374,7 +374,7 @@ body {
 }
 .calculator__display {
   width: 100%;
-  height: 20%;
+  height: 25%;
 }
 .calculator__display__operation {
   height: 40%;
@@ -384,7 +384,7 @@ body {
 }
 .calculator__keyboard {
   width: 100%;
-  height: 80%;
+  height: 75%;
   display: flex;
 }
 .calculator__keyboard__left-buttons {
